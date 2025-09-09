@@ -1,4 +1,224 @@
+:root {
+  /* 메인컬러 */
+  --mian-color: #f13737;
+  /* 메인글자색 */
+  --sub-text-color: #6f6f6f;
+  /* 제목글자크기 */
+  --title-size: 6.4rem;
+  /* 중간제목크기 */
+  --list-title: 2.4rem;
+  /* 기본글자크기 */
+  --text-size: 1.6rem;
+  /* 모서리 둥글기 */
+  --large-radius: 10rem;
+  --middle-radius: 4rem;
+}
+.inner {
+  max-width: 1600px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 255, 0.2);
+}
+
 section .sectiong-title {
   text-transform: uppercase;
-  color: red;
+}
+
+/* 헤더 */
+header {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+
+    .logo {
+      width: 242px;
+    }
+
+    nav {
+      flex-grow: 1;
+      .main-menu {
+        display: flex;
+        justify-content: center;
+        gap: 9rem;
+
+        li {
+          position: relative;
+
+          &::after {
+            content: '';
+            display: block;
+            width: 0%;
+            height: 2px;
+            background: var(--mian-color);
+
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            transition: ease 0.3s;
+          }
+
+          &:hover::after {
+            width: 100%;
+          }
+
+          a {
+            font-size: 2rem;
+            color: #010101;
+            display: block;
+            line-height: 70px;
+
+            &:hover {
+              color: var(--mian-color);
+            }
+          }
+
+          .depth1 {
+            display: none;
+            position: absolute;
+            top: 7rem;
+            font-size: var(--text-size);
+            background-color: #fff;
+
+            li a {
+              font-size: 1.8rem;
+              line-height: 2;
+              text-wrap: nowrap;
+            }
+          }
+        }
+
+        a:hover + .depth1 {
+          display: block;
+        }
+      }
+    }
+
+    .gnb-wrap {
+      display: flex;
+      gap: 3rem;
+
+      .lang {
+        display: flex;
+        align-items: cneter;
+        position: relative;
+        line-height: 70px;
+
+        &:hover .lang-list {
+          display: block;
+        }
+
+        > a {
+          font-size: var(--text-size);
+          background: url('../images/icon-down.svg') no-repeat 100% center;
+          padding-right: 30px;
+
+          display: flex;
+          align-items: center;
+          gap: 4px;
+
+          &.active {
+            background: url('../images/icon-up.svg') no-repeat 100% center;
+          }
+        }
+      }
+
+      .lang-list {
+        display: none;
+        position: absolute;
+        background: #fff;
+        border-radius: 10px;
+        padding: 10px;
+        width: 80px;
+        top: 72px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.4rem;
+        line-height: 2;
+        text-align: center;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+
+        li a {
+          &:hover {
+            color: var(--mian-color);
+          }
+        }
+      }
+
+      .gnb-list {
+        display: flex;
+        gap: 1rem;
+        line-height: 70px;
+      }
+    }
+  }
+}
+
+footer {
+  .inner {
+    max-width: 1700px;
+    margin: 0 auto;
+    border-radius: var(--large-radius) var(--large-radius) 0 0;
+    padding: 50px 110px;
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--text-size);
+    background-color: #5c5c5c;
+    color: #f3f3f3;
+    font-weight: 200;
+
+    .footer-left {
+      address {
+        line-height: 1.5;
+        margin: 3rem 0 2rem;
+      }
+
+      .custom-center {
+        margin-top: 3rem;
+        font-weight: 500;
+
+        a {
+          display: flex;
+          gap: 8px;
+          align-items: end;
+        }
+      }
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      flex-grow: 1;
+      .footer-menu {
+        display: flex;
+        justify-content: flex-end;
+        gap: 7rem;
+      }
+
+      .sns {
+        display: flex;
+        justify-content: flex-end;
+
+        li a {
+          width: 4rem;
+          aspect-ratio: 1/1;
+          display: block;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        li:nth-child(1) {
+          width: 4.4rem;
+        }
+      }
+    }
+  }
 }

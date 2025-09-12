@@ -16,11 +16,8 @@
 .inner {
   max-width: 1600px;
   margin: 0 auto;
+  padding: 016px;
   /* background-color: rgba(0, 0, 255, 0.2); */
-}
-
-section .sectiong-title {
-  text-transform: uppercase;
 }
 
 /* 헤더 */
@@ -92,9 +89,9 @@ header {
           }
         }
 
-        a:hover + .depth1 {
+        /* a:hover + .depth1 {
           display: block;
-        }
+        } */
       }
     }
 
@@ -169,6 +166,8 @@ main {
     font-size: var(--title-size);
     color: var(--main-color);
     padding: 10rem 0 6rem;
+    text-transform: uppercase;
+    font-weight: 900;
   }
   /* main-slider */
   .main-slider-wrap {
@@ -200,14 +199,14 @@ main {
   .pager-btn {
     display: flex;
     position: absolute;
-    left: 20px;
-    bottom: 50px;
+    left: 2rem;
+    bottom: 5rem;
     gap: 20px;
 
     > li > a {
       display: block;
-      width: 20px;
-      height: 20px;
+      width: 2rem;
+      height: 2rem;
       background: #fff;
       border-radius: 10px;
     }
@@ -268,6 +267,8 @@ main {
             border-radius: 40px;
             overflow: hidden;
             flex: 0 0 28%;
+            box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+            transition: ease 0.5s;
 
             &.active {
               flex: 0 0 35%;
@@ -390,7 +391,6 @@ main {
   /* ㅡㅡㅡ promotion ㅡㅡㅡ */
   .promotion-wrap {
     background: #f3f3f3;
-    margin-top: 4rem;
     .promotion-movie {
       position: relative;
       width: 80%;
@@ -402,6 +402,7 @@ main {
         position: absolute;
         top: 50%;
         left: 0;
+
         transform: translateY(-50%);
         background: var(--main-color);
         color: #fff;
@@ -497,9 +498,24 @@ main {
 
   /* ㅡㅡㅡ scd ㅡㅡㅡ */
   .scd-wrap {
-    background: #f3f3f3 url(../images/bg-scd.png) no-repeat 0 8rem;
-    background-size: 1600px;
-    margin: 8rem 0;
+    background-color: #f3f3f3;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 50%;
+      height: 470px;
+      background: #e5e5e5;
+      position: absolute;
+      top: 9rem;
+    }
+
+    .inner {
+      background: url(../images/bg-scd.png) no-repeat 0 90px;
+      background-size: 1450px;
+      position: relative;
+    }
 
     .scd-list {
       display: flex;
@@ -577,19 +593,22 @@ main {
 
         &:nth-child(1) {
           .scd-title::before {
-            background: url(../images/icon-recruit.svg) no-repeat center center;
+            background: url(../images/icon-experiment.svg) no-repeat center center;
+            background-size: cover;
           }
         }
 
         &:nth-child(2) {
           .scd-title::before {
             background: url(../images/icon-recruit.svg) no-repeat center center;
+            background-size: cover;
           }
         }
 
         &:nth-child(3) {
           .scd-title::before {
-            background: url(../images/icon-recruit.svg) no-repeat center center;
+            background: url(../images/icon-iso.svg) no-repeat center center;
+            background-size: cover;
           }
         }
       }

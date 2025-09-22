@@ -3,9 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/swiper.css" />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/respond.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="./js/slider.js"></script>
 
     <title>삼천당</title>
   </head>
@@ -16,7 +20,6 @@
       <a href="#container">본문 바로</a>
     </div>
     <!-- 1.header -->
-
     <header>
       <div class="inner">
         <h1 class="logo">
@@ -97,28 +100,28 @@
     <main>
       <!-- 2-1. main-slider -->
       <div class="main-slider-wrap">
-        <div class="main-slider">
-          <ul class="slider-list">
-            <li>
+        <div class="main-slider swiper">
+          <ul class="slider-list swiper-wrapper">
+            <li class="swiper-slide">
               <a href="#"><img src="./images/main-slid-1.png" alt="" /></a>
             </li>
-            <li>
+            <li class="swiper-slide">
               <a href="#"><img src="./images/main-slid-2.png" alt="" /></a>
             </li>
-            <li>
+            <li class="swiper-slide">
               <a href="#"><img src="./images/main-slid-3.png" alt="" /></a>
             </li>
-            <li>
+            <li class="swiper-slide">
               <a href="#"><img src="./images/main-slid-4.png" alt="" /></a>
             </li>
           </ul>
         </div>
         <ul class="arrow-btn">
-          <li class="arrow-left">
-            <a href="#"><img src="./images/slider-left-btn.png" alt="left arrow" /></a>
+          <li class="arrow-left swiper-button-prev">
+            <a href="#"></a>
           </li>
-          <li class="arrow-right">
-            <a href="#"><img src="./images/slider-right-btn.png" alt="right arrow" /></a>
+          <li class="arrow-right swiper-button-next">
+            <a href="#"></a>
           </li>
         </ul>
         <ul class="pager-btn">
@@ -322,6 +325,7 @@
         </section>
       </div>
     </main>
+
     <!-- 3.footer  -->
     <footer>
       <div class="inner">
